@@ -28,7 +28,7 @@ The purpose of this project is to help Pewlett_Hackard prepare for the upcoming 
 
 Based on the information that is available Pewlett-Hackard is expected to have 21,209 employees retire in 2022. This is based on a query that was run on the Retirement_Titles table as seen in the screenshot below:
 
-![Screenshot] (Data/Screenshots/Summary1.png)
+![Screenshot](Data/Screenshots/Summary1.png)
 
 Pewlett-Hackard has 9 departments and each of these departments have ample retirement ready employees to mentor the next generation of employees as seen in the following screenshot:
 
