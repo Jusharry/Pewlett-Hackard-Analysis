@@ -39,11 +39,13 @@ ORDER BY e.emp_no;
 
 
 -- Use Dictinct with Orderby to remove duplicate rows
-SELECT DISTINCT ON (rt.emp_no)emp_no, rt.first_name,
+SELECT DISTINCT ON (rt.emp_no)rt.emp_no, rt.first_name,
 rt.last_name,
 rt.title,
-rt.to_date
+e.birth_date
 --INTO unique_titles
 FROM retirement_titles as rt
-WHERE (to_date BETWEEN '2022-01-01' AND '9999-01-01')
-ORDER BY emp_no, to_date DESC;
+LEFT JOIN employees as e
+ON (rt.emp_no = e.emp_no)
+WHERE (birth_date BETWEEN '1952-01-01'AND'1952-12-31')
+ORDER BY rt.emp_no DESC;
