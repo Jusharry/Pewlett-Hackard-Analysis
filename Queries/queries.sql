@@ -224,3 +224,26 @@ ORDER BY e.emp_no;
 --Messages
 1549 rows affected
 
+-- Use Dictinct with Orderby to remove duplicate rows
+SELECT DISTINCT ON (rt.emp_no)rt.emp_no, rt.first_name,
+rt.last_name,
+rt.title,
+e.birth_date
+--INTO unique_titles
+FROM retirement_titles as rt
+LEFT JOIN employees as e
+ON (rt.emp_no = e.emp_no)
+WHERE (birth_date BETWEEN '1952-01-01'AND'1952-12-31')
+ORDER BY rt.emp_no DESC;
+
+SELECT COUNT(d.dept_name),dept_name
+--INTO dept_info
+FROM departments as d
+INNER JOIN dept_emp as de
+ON (de.dept_no = d.dept_no)
+INNER JOIN current_emp as ce
+ON (ce.emp_no = de.emp_no)
+LEFT JOIN employees as e
+ON (ce.emp_no = e.emp_no)
+WHERE (e.birth_date BETWEEN '1952-01-01'AND'1955-12-31')
+GROUP BY d.dept_name;
